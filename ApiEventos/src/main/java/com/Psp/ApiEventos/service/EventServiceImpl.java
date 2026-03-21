@@ -3,6 +3,7 @@ package com.Psp.ApiEventos.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.Psp.ApiEventos.domain.Event;
 import com.Psp.ApiEventos.exception.ResourceNotFoundException;
@@ -17,6 +18,7 @@ public class EventServiceImpl implements IEventService
     private final IEventRepo eventRepo;
 
     @Override
+    @Transactional
     public Event save(Event event) 
     {
         return eventRepo.save(event);
@@ -24,6 +26,7 @@ public class EventServiceImpl implements IEventService
 
 
     @Override
+    @Transactional(readOnly = true)
     public Event findById(Long id) 
     {
         return (eventRepo
@@ -33,12 +36,14 @@ public class EventServiceImpl implements IEventService
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Event> findAll() 
     {
         return (eventRepo.findAll());
     }
 
     @Override
+    @Transactional
     public void deleteById(Long id) 
     {
         Event eventToDelete = findById(id);

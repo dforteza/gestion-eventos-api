@@ -60,8 +60,8 @@ public class DataLoader implements CommandLineRunner
         evento3.setCategory(conferencias);
         eventRepo.save(evento3);
         
-        System.out.println("✅ Datos de prueba cargados");
-        System.out.println("📊 Categorías: " + categoryRepo.count());
-        System.out.println("🎫 Eventos: " + eventRepo.count());
+        System.out.println("========= Datos de prueba cargados =========");
+        System.out.println("Categorías: " + categoryRepo.count());
+        System.out.println("Eventos: " + eventRepo.count());
     }
 }
