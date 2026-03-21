@@ -46,12 +46,6 @@ Desarrollar una API REST sencilla para gestionar eventos y categorías, implemen
 mvn spring-boot:run
 ```
 
-**Opción 3 - Ejecutar el JAR:**
-```bash
-./mvnw clean package
-java -jar target/ApiEventos-0.0.1-SNAPSHOT.jar
-```
-
 La aplicación se iniciará en: **http://localhost:8080**
 
 ---
