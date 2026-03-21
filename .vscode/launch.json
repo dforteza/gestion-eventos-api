@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiEventosApplication<ApiEventos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Psp.ApiEventos.ApiEventosApplication",
+            "projectName": "ApiEventos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

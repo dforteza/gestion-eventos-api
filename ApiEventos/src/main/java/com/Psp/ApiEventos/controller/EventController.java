@@ -9,6 +9,7 @@ import com.Psp.ApiEventos.dto.EventResponseDto;
 import com.Psp.ApiEventos.mapper.EventMapper;
 import com.Psp.ApiEventos.service.IEventService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
@@ -58,7 +59,7 @@ public class EventController
     }
 
     @PostMapping
-    public ResponseEntity<EventResponseDto> createEvent(@RequestBody EventRequestDto requestDto) 
+    public ResponseEntity<EventResponseDto> createEvent(@Valid @RequestBody EventRequestDto requestDto) 
     {
         // 1- Transformar y // 2 Guardar
         Event eventToSave = eventService.save(eventMapper.toEntity(requestDto));
@@ -73,7 +74,7 @@ public class EventController
 @PutMapping("{id}")
 public ResponseEntity<EventResponseDto> updateEvent(
     @PathVariable Long id,
-    @RequestBody EventRequestDto requestDto
+    @Valid @RequestBody EventRequestDto requestDto
 ) 
 {
     // 1- Buscar por el ID del path
