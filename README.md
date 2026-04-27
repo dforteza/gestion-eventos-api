@@ -1,20 +1,74 @@
-# API REST - Gestión de Eventos
+# API Eventos
 
-## 👥 Autor
-**Diego Forteza Benito y Javier Escudero**  
-Programación de Servicios y Procesos (PSP)
+API REST para gestión de eventos y categorías desarrollada como proyecto de clase.
+
+## Stack
+
+![Java](https://img.shields.io/badge/Java_17-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot_3-6DB33F?style=flat&logo=spring&logoColor=white)
+![H2](https://img.shields.io/badge/H2-004088?style=flat&logo=h2&logoColor=white)
+
+`Spring Boot 3` · `Spring Data JPA` · `MapStruct` · `Lombok` · `H2`
 
 ---
 
-## 🎯 Objetivo del Proyecto
+## Arquitectura
 
-Desarrollar una API REST sencilla para gestionar eventos y categorías, implementando:
-- Operaciones CRUD completas (Crear, Leer, Actualizar, Eliminar)
-- Relación 1:N entre Categorías y Eventos (una categoría puede tener muchos eventos)
-- Arquitectura en capas: Controller → Service → Repository
-- Validaciones de datos
-- Manejo de excepciones
+```
+Controller → Service → Repository → Domain
+```
 
+---
+
+## Endpoints
+
+### Categorías
+```
+GET    /api/categories
+GET    /api/categories/{id}
+POST   /api/categories
+PUT    /api/categories/{id}
+DELETE /api/categories/{id}
+```
+
+### Eventos
+```
+GET    /api/events
+GET    /api/events/{id}
+POST   /api/events
+PUT    /api/events/{id}
+DELETE /api/events/{id}
+```
+
+---
+
+## Arranque
+
+```bash
+mvn spring-boot:run
+```
+
+La API quedará disponible en `http://localhost:8080`
+
+Al arrancar se cargan automáticamente 3 categorías y 3 eventos de ejemplo.
+
+---
+
+## Consola H2
+
+```
+http://localhost:8080/h2-console
+
+JDBC URL:  jdbc:h2:mem:eventosdb
+Username:  sa
+Password:  (vacío)
+```
+
+---
+
+## Tests con Postman
+
+Importar `ApiEventos_Postman_Collection.json` y ejecutar las carpetas incluidas.
 ---
 
 ## 🛠️ Tecnologías Utilizadas
